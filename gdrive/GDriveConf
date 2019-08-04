@@ -3,6 +3,7 @@
 # Google drive configuration script
 
 gdrive_dir="/tmp/sd/gdrive/"
+lib_dir="/home/yi-hack-v4/"
 
 renew_token(){
 	while [ 1 ] ;  do
@@ -177,11 +178,11 @@ if [ ! -d ${gdrive_dir}tmp ]; then
   mkdir ${gdrive_dir}tmp
 fi
 
-cp ${gdrive_dir}libusr/* /home/libusr/
-
-sed -e 's/sh \/home\/hd1\/gdrive\/GDrive\(Uploader\|Autoremover\)//g' -i /home/init.sh
-echo "sh ${gdrive_dir}GDriveUploader" >> /home/init.sh
-echo "sh ${gdrive_dir}GDriveAutoremover" >> /home/init.sh
+cp ${gdrive_dir}libusr/* ${lib_dir}lib
+/home/yi-hack-v4/script
+sed -e 's/sh \/home\/hd1\/gdrive\/GDrive\(Uploader\|Autoremover\)//g' -i ${lib_dir}script/system.sh
+echo "sh ${gdrive_dir}GDriveUploader" >> ${lib_dir}script/system.sh
+echo "sh ${gdrive_dir}GDriveAutoremover" >> ${lib_dir}script/system.sh
 
 chmod +x /home/libusr/libz.so* ${gdrive_dir}GDriveUploader ${gdrive_dir}GDriveAutoremover ${gdrive_dir}JSON.sh ${gdrive_dir}curl
 
