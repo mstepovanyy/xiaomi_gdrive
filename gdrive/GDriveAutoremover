@@ -2,7 +2,7 @@
 # GDriveAutoremover version 0.5 by Alexandr Porunov https://github.com/porunov/xiaomi_gdrive
 # Google drive autoremover
 
-gdrive_dir="/home/hd1/gdrive/"
+gdrive_dir="/tmp/sd/gdrive/"
 total_space=0
 used_space=0
 sleep_time=0
