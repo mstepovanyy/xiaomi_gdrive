@@ -180,6 +180,14 @@ fi
 
 cp ${gdrive_dir}libusr/* ${lib_dir}lib
 
+rm /bin/egrep
+rm /bin/expr
+rm /bin/stat
+
+ln -s ${gdrive_dir}bin/busybox-1.28.1 /bin/egrep
+ln -s ${gdrive_dir}bin/busybox-1.28.1 /bin/expr
+ln -s ${gdrive_dir}bin/busybox-1.28.1 /bin/stat
+
 sed -e 's/sh \/home\/hd1\/gdrive\/GDrive\(Uploader\|Autoremover\)//g' -i ${lib_dir}script/system.sh
 echo "sh ${gdrive_dir}GDriveUploader" >> ${lib_dir}script/system.sh
 echo "sh ${gdrive_dir}GDriveAutoremover" >> ${lib_dir}script/system.sh
