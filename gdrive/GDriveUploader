@@ -2,8 +2,8 @@
 # GDriveUploader version 0.5 by Alexandr Porunov https://github.com/porunov/xiaomi_gdrive
 # Google drive uploader
 
-gdrive_dir="/home/hd1/gdrive/"
-record_dir="/home/hd1/record/"
+gdrive_dir="/tmp/sd/gdrive/"
+record_dir="/tmp/sd/record/"
 next_dir=""
 next_time=0
 sleep_time=0
