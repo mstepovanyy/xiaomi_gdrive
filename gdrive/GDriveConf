@@ -179,12 +179,12 @@ if [ ! -d ${gdrive_dir}tmp ]; then
 fi
 
 cp ${gdrive_dir}libusr/* ${lib_dir}lib
-/home/yi-hack-v4/script
+
 sed -e 's/sh \/home\/hd1\/gdrive\/GDrive\(Uploader\|Autoremover\)//g' -i ${lib_dir}script/system.sh
 echo "sh ${gdrive_dir}GDriveUploader" >> ${lib_dir}script/system.sh
 echo "sh ${gdrive_dir}GDriveAutoremover" >> ${lib_dir}script/system.sh
 
-chmod +x /home/libusr/libz.so* ${gdrive_dir}GDriveUploader ${gdrive_dir}GDriveAutoremover ${gdrive_dir}JSON.sh ${gdrive_dir}curl
+chmod +x ${lib_dir}lib/libz.so* ${gdrive_dir}GDriveUploader ${gdrive_dir}GDriveAutoremover ${gdrive_dir}JSON.sh ${gdrive_dir}curl
 
 if [ -f ${gdrive_dir}gdrive_folder.index ]; then
 	rm ${gdrive_dir}gdrive_folder.index
