@@ -1,10 +1,8 @@
 # Google drive loader for xiaomi smart ip camera 
-Google drive loader for xiaomi smart ip camera (12CN). xiaomi_gdrive let you automatically upload your videos from xiaomi smart ip camera to your google drive account. Also it can automatically remove old files from your google drive account to prevent space exhaustion.
-
-![ants_smart_webcam_ xiaomi](https://cloud.githubusercontent.com/assets/17673243/17768152/76d2a56a-653b-11e6-81db-522a29f9f1f2.png)
+Google drive loader for xiaomi smart ip camera *Yi Dome 1080p*. xiaomi_gdrive let you automatically upload your videos from xiaomi smart ip camera to your google drive account. Also it can automatically remove old files from your google drive account to prevent space exhaustion.
 
 ### Step-by-step instruction for installing xiaomi_gdrive
-
+0. Install yi-hack-v4
 1. Turn off your camera and get microSD
 2. Download xiaomi_gdrive and unzip it (https://github.com/porunov/xiaomi_gdrive/releases/download/0.0.5/xiaomi_gdrive.zip)
 3. Copy next folders into your microSD:
