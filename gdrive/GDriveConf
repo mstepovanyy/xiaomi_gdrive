@@ -4,6 +4,7 @@
 
 gdrive_dir="/tmp/sd/gdrive/"
 lib_dir="/home/yi-hack-v4/"
+startup_script="/tmp/sd/yi-hack-v4/startup.sh"
 
 renew_token(){
 	while [ 1 ] ;  do
@@ -188,9 +189,14 @@ ln -s ${gdrive_dir}bin/busybox-1.28.1 /bin/egrep
 ln -s ${gdrive_dir}bin/busybox-1.28.1 /bin/expr
 ln -s ${gdrive_dir}bin/busybox-1.28.1 /bin/stat
 
-sed -e 's/sh \/home\/hd1\/gdrive\/GDrive\(Uploader\|Autoremover\)//g' -i ${lib_dir}script/system.sh
-echo "sh ${gdrive_dir}GDriveUploader" >> ${lib_dir}script/system.sh
-echo "sh ${gdrive_dir}GDriveAutoremover" >> ${lib_dir}script/system.sh
+if [ ! -f ${startup_script} ]; then
+  mkdir -p "$(dirname "${startup_script}")" && touch "${startup_script}"
+  echo "#!/bin/sh" >> ${startup_script}
+fi
+
+sed -e 's/sh \/home\/hd1\/gdrive\/GDrive\(Uploader\|Autoremover\)//g' -i ${startup_script}
+echo "sh ${gdrive_dir}GDriveUploader" >> ${startup_script}
+echo "sh ${gdrive_dir}GDriveAutoremover" >> ${startup_script}
 
 chmod +x ${lib_dir}lib/libz.so* ${gdrive_dir}GDriveUploader ${gdrive_dir}GDriveAutoremover ${gdrive_dir}JSON.sh ${gdrive_dir}curl
 
