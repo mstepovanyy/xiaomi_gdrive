@@ -355,7 +355,8 @@ finish_current_dir_uploads(){
 wait_for_new_file(){
 	wait_finish_time=`expr $(date +%s) + 60`
 	while [ ${wait_finish_time} -gt $(date +%s) ] ;  do
-		new_files_count=$(ls ${record_dir}${next_dir} | wc -l)
+		#new_files_count=$(ls ${record_dir}${next_dir} | wc -l)
+		new_files_count=$(find ${record_dir}${next_dir}/* ! -name . -prune -print | grep -c /)
 		if [ ${new_files_count} -gt 0 ]; then
 			break
 		else
